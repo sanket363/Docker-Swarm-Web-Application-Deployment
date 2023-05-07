@@ -2,11 +2,8 @@ version: '3.7'
 
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    restart: unless-stopped
-    
+    image: /root/Docker-Swarm-Web-Application-Deployment/Dockerfile
+    command: python app.py
     ports:
       - "80:80"
     deploy:
