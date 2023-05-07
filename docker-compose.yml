@@ -4,7 +4,7 @@ services:
   web:
     build:
       context: .
-	 dockerfile: Dockerfile
+      dockerfile: Dockerfile
     image: website
     restart: unless-stopped
     
