@@ -6,7 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     image: alpine
-    restart: unless-stopped
 
     ports:
       - "80:80"
