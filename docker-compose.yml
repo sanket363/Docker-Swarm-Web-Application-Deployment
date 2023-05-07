@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: website:{{.Node.Hostname}}-v1
+    image: website
     restart: unless-stopped
 
     ports:
