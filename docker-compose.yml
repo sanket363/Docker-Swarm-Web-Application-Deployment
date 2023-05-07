@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: snaket2628/website
+    image: alpine
     restart: unless-stopped
 
     ports:
