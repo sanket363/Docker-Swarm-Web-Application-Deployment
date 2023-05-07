@@ -3,7 +3,6 @@ version: '3.7'
 services:
   web:
     image: /root/Docker-Swarm-Web-Application-Deployment/Dockerfile
-    command: python app.py
     ports:
       - "80:80"
     deploy:
