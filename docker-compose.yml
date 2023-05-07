@@ -4,8 +4,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: /root/Docker-Swarm-Web-Application-Deployment/Dockerfile
-    image: website:v1
+      dockerfile: Dockerfile
     restart: unless-stopped
     
     ports:
