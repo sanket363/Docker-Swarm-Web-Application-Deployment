@@ -2,7 +2,12 @@ version: '3.7'
 
 services:
   web:
-    image: /root/Docker-Swarm-Web-Application-Deployment/Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: website:{{.Node.Hostname}}-v1
+    restart: unless-stopped
+
     ports:
       - "80:80"
     deploy:
