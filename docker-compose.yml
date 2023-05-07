@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: website
+    image: snaket2628/website
     restart: unless-stopped
 
     ports:
