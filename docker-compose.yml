@@ -2,9 +2,9 @@ version: '3.7'
 
 services:
   web:
-    image: snaket2628/website
+    image: #build the image locally and add the build image name here or add this chaitannyaa/calculator
     deploy:
-      replicas: 2
+      replicas: 3
       placement:
         constraints: [node.role == manager]
       resources:
@@ -12,5 +12,16 @@ services:
           memory: 128M
         reservations:
           memory: 64M
+      update_config:
+        delay: 10s
+        parallelism: 2
+        failure_action: rollback
+        monitor: 30s
+        max_failure_ratio: 0.5
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     ports:
       - "80:80"
