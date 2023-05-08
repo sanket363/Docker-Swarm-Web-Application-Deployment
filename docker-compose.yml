@@ -1,12 +1,16 @@
 version: '3.7'
+
 services:
   web:
-    image: snaket2628/website:latest
-    ports:
-      - "80:80"
+    image: snaket2628/website
     deploy:
-      replicas: 3
+      replicas: 2
+      placement:
+        constraints: [node.role == manager]
       resources:
         limits:
-          memory: 512M
-          cpus: "0.5"
+          memory: 128M
+        reservations:
+          memory: 64M
+    ports:
+      - "80:80"
