@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: alpine
+    image: snaket2628/website
 
     ports:
       - "80:80"
