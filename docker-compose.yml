@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   web:
     image: snaket2628/website:latest
@@ -7,3 +5,7 @@ services:
       - "80:80"
     deploy:
       replicas: 3
+      resources:
+        limits:
+          memory: 512M
+          cpus: "0.5"
