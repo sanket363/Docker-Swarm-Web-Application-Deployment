@@ -2,8 +2,13 @@ version: '3.7'
 
 services:
   web:
-    image: snaket2628/website
-    ports:
-      - "80:80"
+    image: snaket2628/website:latest
     deploy:
       replicas: 3
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
